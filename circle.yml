@@ -18,5 +18,5 @@ deployment:
   hub:
     branch: master
     commands:
-      - docker login -u $DOCKER_USER -p $DOCKER_PASS $REGISTRY_URL
+      - docker login -e $DOCKER_USER -u $DOCKER_USER -p $DOCKER_PASS $REGISTRY_URL
       - docker push $REGISTRY_URL/circleci
