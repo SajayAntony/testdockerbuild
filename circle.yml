@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build --rm=false -t $REGISTRY_URL/circleci .
+    - docker build --rm=false -t $REGISTRY_HOST/circleci .
 
 test:
   override:
