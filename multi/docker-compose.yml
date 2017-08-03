@@ -1,0 +1,9 @@
+version: '3'
+services: 
+  echo: 
+    image: ${DOCKER_REGISTRY}/echo
+    build: ./src/echo/.
+  multistage:
+    image : ${DOCKER_REGISTRY}/mutistage
+    build: ./src/multistage/
+
