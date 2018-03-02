@@ -1,9 +1,13 @@
-#[macro_use] extern crate nickel;
+extern crate iron;
 
-use nickel::{Nickel, HttpRouter};
+use iron::prelude::*;
+use iron::status;
 
 fn main() {
-    let mut server = Nickel::new();
-    server.get("**", middleware!("Hello World"));
-    server.listen("127.0.0.1:8080");
+    fn hello_world(_: &mut Request) -> IronResult<Response> {
+        Ok(Response::with((status::Ok, "Hello World!")))
+    }
+
+    let _server = Iron::new(hello_world).http(("0.0.0.0", 8080)).unwrap();
+    println!("Listening on 8080");
 }

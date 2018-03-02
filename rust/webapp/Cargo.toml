@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["Sajay Antony <sajaya@microsoft.com>"]
 
 [dependencies]
-nickel = "*"
+iron = "0.6.*"
